@@ -77,15 +77,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _jquery = __webpack_require__(1);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /*import $ from 'jquery';*/
 
 /* -- this is a jquery spaghetti code example--
 class MobileMenu {
@@ -97,13 +89,40 @@ class MobileMenu {
 } 
 */
 
+/*class MobileMenu {
+    constructor() {
+        this.menuIcon = $(".menu-icon");
+        this.menuContent = $(".site-header__menu-content");
+        this.events();
+    }
+    
+    events() {
+        this.menuIcon.click(this.toggleTheMenu.bind(this));
+    }
+    
+    toggleTheMenu() {
+        this.menuContent.toggleClass("site-header__menu-content--is-visible");
+    }
+} 
+
+export default MobileMenu;*/
+
+var _jquery = __webpack_require__(1);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 var MobileMenu = function () {
     function MobileMenu() {
         _classCallCheck(this, MobileMenu);
 
-        this.menuIcon = (0, _jquery2.default)(".menu-icon");
-        this.menuContent = (0, _jquery2.default)(".site-header__menu-content");
+        this.siteHeader = (0, _jquery2.default)(".site-header");
+        this.menuIcon = (0, _jquery2.default)(".site-header__menu-icon");
         this.events();
+        this.menuContent = (0, _jquery2.default)(".site-header__menu-content");
     }
 
     _createClass(MobileMenu, [{
@@ -115,6 +134,8 @@ var MobileMenu = function () {
         key: "toggleTheMenu",
         value: function toggleTheMenu() {
             this.menuContent.toggleClass("site-header__menu-content--is-visible");
+            this.siteHeader.toggleClass("site-header--is-expanded");
+            this.menuIcon.toggleClass("site-header__menu-icon--close-x");
         }
     }]);
 
@@ -10363,29 +10384,34 @@ var _MobileMenu2 = _interopRequireDefault(_MobileMenu);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var mobileMenu = new _MobileMenu2.default(); /* 
-                                             
-                                             var $ = require('jquery');
-                                             import Person from './modules/Person';
-                                             
-                                             
-                                             class Adult extends Person {
-                                                 payTaxes() {
-                                                     console.log(this.name + " now owes 0$ in taxes. ");
-                                                 }
-                                             }
-                                             
-                                             
-                                             var Eugene = new Person("Eugene Peter", "black"),
-                                                 Penelope = new Adult("Penelope Eden", "blue-green");
-                                             
-                                             
-                                             Eugene.greet(); 
-                                             Penelope.greet();
-                                             
-                                             Penelope.payTaxes();
-                                             
-                                             */
+var mobileMenu = new _MobileMenu2.default();
+/*var $ = require('jquery');
+import Person from './modules/Person';
+
+
+class Adult extends Person {
+    payTaxes() {
+        console.log(this.name + " now owes 0$ in taxes. ");
+    }
+}
+
+
+var Eugene = new Person("Eugene Peter", "black");
+
+Eugene.greet();
+
+var   Penelope = new Adult("Penelope Eden", "blue-green");
+
+Penelope.greet();
+Penelope.payTaxes();*/
+
+/*
+var $ = require('jquery');
+
+import MobileMenu from './modules/MobileMenu'; 
+
+var mobileMenu = new MobileMenu();
+*/
 
 /***/ })
 /******/ ]);

@@ -7,6 +7,7 @@
     
     &__text-content {
         position: absolute;
+        padding-top: 60px;
         top: 50%;
         transform: translateY(-50%);
         left: 0;

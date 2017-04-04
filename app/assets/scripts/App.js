@@ -1,6 +1,5 @@
-/* 
 
-var $ = require('jquery');
+/*var $ = require('jquery');
 import Person from './modules/Person';
 
 
@@ -11,20 +10,26 @@ class Adult extends Person {
 }
 
 
-var Eugene = new Person("Eugene Peter", "black"),
-    Penelope = new Adult("Penelope Eden", "blue-green");
+var Eugene = new Person("Eugene Peter", "black");
 
+Eugene.greet();
 
-Eugene.greet(); 
+var   Penelope = new Adult("Penelope Eden", "blue-green");
+
 Penelope.greet();
-
-Penelope.payTaxes();
-
-*/
+Penelope.payTaxes();*/
 
 
+/*
+var $ = require('jquery');
 
 import MobileMenu from './modules/MobileMenu'; 
 
 var mobileMenu = new MobileMenu();
+*/
+
+import MobileMenu from './modules/MobileMenu';
+var mobileMenu = new MobileMenu();
+
+
 
